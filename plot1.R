@@ -1,7 +1,6 @@
 library(data.table)
 
-# Main function to run in order to download a file and produce a plot showing Global Active Power consumption
-# During February 1st-2nd 2007.
+# Main function to run in order to download a file and produce a plot
 plot1 <- function(){
         #Download the source file
         url = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -10,7 +9,7 @@ plot1 <- function(){
         #parse the data (subset, set column types etc.)
         data <- parseData(data)
         
-        #plot 1st visualization (plot1.png)
+        #plot visualization (plot1.png)
         plotChart(data)
 }
 
@@ -52,7 +51,7 @@ parseData <- function(df){
         df <- cbind(DateTime,df)
 }
 
-# This function actually plots the required plot1 graph and saves it as a png image name "plot1.png"
+# This function actually plots the required plot1 graph and saves it as a png image named "plot1.png"
 plotChart <- function(df){
         print("Plotting visualization to: plot1.png")
         png(filename="plot1.png",width=480,height=480)
